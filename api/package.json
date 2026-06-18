@@ -1,0 +1,9 @@
+{
+  "name": "techwave-radio-api",
+  "version": "1.0.0",
+  "description": "Azure Functions backend for TechWave Radio (radio.techwaveacademy.com) — a 24x7 Hindi-RJ tech & AI station.",
+  "main": "playlist/index.js",
+  "dependencies": {
+    "@azure/storage-blob": "^12.17.0"
+  }
+}
