@@ -36,7 +36,7 @@ jobs:
         run: |
           sleep 45
           code=$(curl -s -m 230 -o /tmp/r.json -w "%{http_code}" \
-            "https://radio.techwaveacademy.com/api/refresh?key=${{ secrets.REFRESH_KEY }}")
-          echo "HTTP $code"; cat /tmp/r.json || true; echo
+            "https://radio.techwaveacademy.com/api/refresh?key=${{ secrets.REFRESH_KEY }}" || true)
+          echo "HTTP ${code:-none}"; cat /tmp/r.json 2>/dev/null || true; echo
           # Non-fatal: the custom domain may not be wired on the very first deploy.
           test "$code" = "200" || echo "warm skipped (domain not ready yet)"
